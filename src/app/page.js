@@ -12,12 +12,13 @@ export default function Home() {
   let userId = cookies().get('X-KU-ID').value
   let sessionId = cookies().get('X-KU-SESSION').value
   let role = cookies().get('ROLE').value
-
+  
+  
   return (
     <div>
       <div>
         <h1> KU 수강 신청 </h1>
-        <span><Link href= "/add">➕추가</Link></span>
+        <span><Link href= {(role == 'teacher') ? "/add/teacher" :"/add"} >➕추가</Link></span>
         <LectureList userId={userId} sessionId={sessionId} role={role} />
       </div>
     </div>

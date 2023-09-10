@@ -1,4 +1,4 @@
-import PostList from "./postlist"
+import PostList from "./PostList"
 import { cookies } from "next/headers"
 
 export default function Posts(){

@@ -23,7 +23,8 @@ export default async function PostList(props){
     {Array.isArray(result) ? (
         result.map((post, i) => (
           <div key={i} className="element">
-            <span>제목: {post.name}, </span>
+            <span>제목: {post.title}, </span>
+            <span>내용: {post.text}, </span>
             <span>교수자: {post.teacherName}</span>
           </div>
         ))
