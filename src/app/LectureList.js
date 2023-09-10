@@ -4,18 +4,18 @@ export default async function LectureList(props){
   
     // Replace with your actual header values
     const headers = {
-      'X-KU-ID': userId,
+      'X-KU-ID': parseInt(userId),
       'X-KU-SESSION': sessionId,
       'ROLE': role
     };
-
-  
+    
+    
     const response = await fetch('http://localhost:8080/v1/lectures', {
       method: 'GET',
       headers: headers,
     })
     const result = await response.json()
-    
+
 
 
   return(

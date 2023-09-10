@@ -3,14 +3,14 @@ import { setCookie } from 'cookies-next';
 import { getCookie } from 'cookies-next';
 
 export default function AddLecture(props){
-  let {lectureName}= props
+  let {lectureName, lectureId}= props
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let userId = getCookie('X-KU-ID')
+    let userId = parseInt(getCookie('X-KU-ID'))
     let sessionId = getCookie('X-KU-SESSION')
     let role = getCookie('ROLE')
-    console.log(userId)
+    
    
     const headers = {
       'Content-Type': 'application/json',
@@ -22,16 +22,18 @@ export default function AddLecture(props){
       "Origin": "http://localhost:3000"
    };
 
-   console.log(headers)
+   
 
     try {
       
-      const loginResponse = await fetch('http://localhost:8080/v1/lectures', {
+      const loginResponse = await fetch('http://localhost:8080/v1/lectures/enroll', {
         method: 'POST',
         headers: headers,
-        body: JSON.stringify({lectureName}),
+        body: JSON.stringify({lectureId}),
       });
-      console.log(loginResponse)
+      if(loginResponse.status==200){
+        
+      }
       
     } catch (error) {
       console.error('Login error:', error);

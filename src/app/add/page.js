@@ -27,7 +27,7 @@ export default async function Add(){
           <div key={i} className="element">
             <span>수업: {lecture.name}, </span>
             <span>교수자: {lecture.teacherName}</span>          
-            <AddLecture lectureName={lecture.name}> </AddLecture>
+            <AddLecture lectureName={lecture.name} lectureId={lecture.id} > </AddLecture>
     
           </div>
         ))

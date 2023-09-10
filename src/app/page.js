@@ -9,9 +9,9 @@ import { cookies } from 'next/headers'
 
 export default function Home() {
   
-  let userId = cookies().get('X-KU-ID')
-  let sessionId = cookies().get('X-KU-SESSION')
-  let role = cookies().get('role')
+  let userId = cookies().get('X-KU-ID').value
+  let sessionId = cookies().get('X-KU-SESSION').value
+  let role = cookies().get('ROLE').value
 
   return (
     <div>

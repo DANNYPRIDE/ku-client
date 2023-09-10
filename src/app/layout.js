@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
-
+import { cookies } from 'next/headers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,9 +15,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Link href="/">🏠</Link> 
         <Link href="/login">Login</Link> 
+        <Link href="/logout">Logout</Link> 
         <Link href="/register">회원가입</Link> 
         <Link href="/post">게시물</Link> 
         {children}</body>
     </html>
   )
 }
+
